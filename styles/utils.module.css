@@ -1,0 +1,12 @@
+.main {
+  width: 100%;
+}
+
+.MuiContainer-root {
+  padding: 0;
+  margin: 0;
+}
+
+.MuiContainer-root .MuiContainer-maxWidthLg {
+  margin: 0;
+}
