@@ -1,6 +1,7 @@
 import React from 'react';
 import '../styles/globals.css'
 import '../styles/utils.module.css'
+import '../styles/swiper.css'
 import { ThemeProvider } from '@material-ui/core'
 import theme from '../styles/theme/muiTheme.js'
 // すべてのPagesに共通するトップレベルのCompornents

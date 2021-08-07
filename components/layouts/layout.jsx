@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import styles from './layout.module.css'
-import utilStyles from '../styles/utils.module.css'
+import utilStyles from '../../styles/utils.module.css'
 import Link from 'next/link'
 import { css } from '@emotion/react'
 import {useEffect} from 'react'
@@ -19,5 +19,14 @@ export default function Layout({ children, home }) {
 }
 
 const container = css`
-  
+  .header{
+    z-index: 100;
+    height: 60px;
+    /* background-color: rgb(245,199,104); */
+    background-color: rgba(255,255,255,.9);
+    img{
+      height: 100%;
+    }
+  }
 `;
+
