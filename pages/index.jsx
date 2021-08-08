@@ -3,6 +3,8 @@ import {useEffect} from 'react'
 import Head from 'next/head'
 import Layout, { siteTitle } from '../components/layouts/layout'
 import Swiper from '../components/commons/swiper/Swiper'
+import FlipSwiper from '../components/commons/swiper/FlipSwiper'
+import ItemList from '../components/commons/items/ItemList'
 import Header from '../components/layouts/Header'
 import Image from 'next/image'
 import { css } from '@emotion/react'
@@ -31,7 +33,7 @@ export default function Home() {
           </video>
         </Box>
         <Box className="centerBox">
-          <Typography  variant="h2" className="title title-upper">定食屋　一富士</Typography>
+          <Typography  variant="h2" className="title title-upper wf-hannari">定食屋　一富士</Typography>
         </Box>
         <Container css={StyledContainer}>
           <Box className="styledContent">
@@ -40,22 +42,18 @@ export default function Home() {
               <Swiper />
             </Box>
           </Box>
-          <Box className="styledContent">
-            <Typography  variant="h5" className="concept">Information</Typography>
-            <Box>
-              <Typography  variant="h2" className="concept_content">The Experience</Typography>
-            </Box>
+          <Typography  variant="h5" className="itemList-title">お品書き</Typography>
+          <div>
+            <FlipSwiper />
+          </div>
+          <ItemList />
+          <Box>
+            
           </Box>
 
         </Container>
       </div>
 
-
-
-
-        {/* <div className="header-title">
-          <img src="/images/logo_transparent.png" />
-        </div> */}
     </Layout>
   )
 }
@@ -74,12 +72,14 @@ const Wrapper = css`
   }
   .centerBox{
     position: absolute;
-    top: 20%;
+    top: 5%;
     right: 50%;
     left: 50%;
     z-index: 100;
   }
   .title{
+    /* font-family: "Hannari"; */
+    font-family: "M PLUS 1p";
     z-index: 100;
     color: #fff;
     writing-mode: vertical-rl;
@@ -92,7 +92,15 @@ const StyledContainer = css`
   .styledContent{
     margin: 3rem 0;
     .information{
+      margin: 1rem 0;
       text-align: right;
     }
+    .concept{
+      margin: 1rem 0;
+    }
+  }
+  .itemList-title{
+    margin: 1rem 0;
+    text-align: left;
   }
 `;

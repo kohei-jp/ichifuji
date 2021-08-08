@@ -36,6 +36,7 @@ const theme = createTheme({
       }
     },
     fontFamily: [
+      '"Hannari"',
       '-apple-system',
       'BlinkMacSystemFont',
       '"Segoe UI"',

@@ -13,6 +13,7 @@ export default function Layout({ children, home }) {
 
   return (
     <div css={container}>
+      <link href="https://fonts.googleapis.com/earlyaccess/hannari.css" rel="stylesheet" />
       <main>{children}</main>
     </div>
   )
