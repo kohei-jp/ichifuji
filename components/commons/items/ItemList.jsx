@@ -9,7 +9,15 @@ import InfoIcon from '@material-ui/icons/Info';
 
 export default function ItemList() {
   return (
-    <ImageList sx={{ width: 800, height: 450 }}>
+    <ImageList 
+      // sx={{ 
+      //   width:{ 
+      //     800, 
+      //   },
+      //   height: {450
+      //   }
+      // }}
+    >
       {itemData.map((item) => (
         <ImageListItem key={item.img} css={listItem}>
           <img
@@ -39,8 +47,11 @@ export default function ItemList() {
 
 const listItem = css`
   width: 33% !important;
-  .MuiImageListItemBar-root{
-    height: 50px;
+  @media (max-width: 475px) {
+    height: 120px !important;
+    .MuiImageListItemBar-rootSubtitle{
+      height: 35%;
+    }
   }
 `;
 

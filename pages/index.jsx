@@ -64,11 +64,11 @@ export default function Home() {
               <table>
                 <tr>
                   <td className="acess-title">住所</td>
-                  <td>〒630-8051 奈良県奈良市七条町165-1（駐車場30台完備）</td>
+                  <td>〒169-0075 東京都新宿区高田馬場４丁目３４−３</td>
                 </tr>
                 <tr>
                   <td className="acess-title">TEL</td>
-                  <td>0742-31-4999</td>
+                  <td>03-3368-0251</td>
                 </tr>
                 <tr>
                   <td className="acess-title">営業時間</td>
@@ -80,11 +80,11 @@ export default function Home() {
                 </tr>
                 <tr>
                   <td className="acess-title">席数</td>
-                  <td>カウンター 6席 / テーブル 5席</td>
+                  <td>カウンター 6席 / テーブル 20席</td>
                 </tr>
                 <tr>
                   <td className="acess-title">交通手段</td>
-                  <td>JR山手線 / 西武新宿 高田馬場駅より徒歩15分</td>
+                  <td>JR山手線 / 西武新宿 高田馬場駅より徒歩約15分</td>
                 </tr>
               </table>
             </Box>
@@ -114,18 +114,25 @@ const Wrapper = css`
   }
   .centerBox{
     position: absolute;
-    top: 5%;
+    top: 5rem;
     right: 50%;
     left: 50%;
     z-index: 100;
   }
   .title{
-    /* font-family: "Hannari"; */
     font-family: "M PLUS 1p";
     z-index: 100;
     color: #fff;
     writing-mode: vertical-rl;
   }
+  @media (max-width: 475px) {
+    .centerBox{
+      top:1%;
+    }
+    .title{
+      font-size: 3rem;
+    }
+  } 
 `;
 
 const StyledContainer = css`

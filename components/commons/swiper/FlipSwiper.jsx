@@ -43,10 +43,17 @@ const Flip = css`
   margin: 2rem 0;
   .swiper-container {
     max-width: 700px;
-    height: 500px;
+    max-height: 500px;
     /* padding: 0 50px; 矢印分のスペースを削除 */
     padding: 0;
+
+    @media (max-width: 475px) {
+      .swiper-button-prev,
+      .swiper-button-next{
+        --swiper-navigation-size: 24px;
+      }
     }
+  }
 
   .swiper-slide {
     background-position: center;
@@ -66,6 +73,6 @@ const Flip = css`
     // swiper-containerの width - padding の値
     display: block;
     max-width: 700px;
-    height: 500px;
+    max-height: 500px;
   }
 `;
