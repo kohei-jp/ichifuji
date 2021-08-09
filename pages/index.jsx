@@ -27,7 +27,7 @@ export default function Home() {
         <title>{siteTitle}</title>
       </Head>
       <div css={Wrapper}>
-        <Header />
+        {/* <Header /> */}
         <Box className="wrapperVideo">
           <video id="bg-video" preload="auto" loop autoPlay muted playsInline >
             <source src="/videos/cooking.mp4" type="video/mp4"></source>
@@ -39,17 +39,17 @@ export default function Home() {
 
         <Container css={StyledContainer}>
           <Box className="styledContent">
+            <Typography  variant="h5" className="itemList-title">ギャラリー</Typography>
+            <Box>
+              <Swiper />
+            </Box>
+          </Box>
+          <Box className="styledContent">
             <Typography  variant="h5" className="information">一富士からのお知らせ</Typography>
             <Box>
               <Kokuban />
             </Box>
           </Box>
-          {/* <Box className="styledContent">
-            <Typography  variant="h5" className="information">一富士からのお知らせ</Typography>
-            <Box>
-              <Swiper />
-            </Box>
-          </Box> */}
           <Typography  variant="h5" className="itemList-title">お品書き</Typography>
           <div>
             <FlipSwiper />
