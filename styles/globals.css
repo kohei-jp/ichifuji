@@ -9,7 +9,7 @@ body {
 }
 
 .wf-hannari {
-  font-family: "Hannari";
+  font-family: "Hannari", "sans-serif";
 }
 
 a {
@@ -37,5 +37,28 @@ h1 {
 
 img {
   max-width: 100%;
+  height: 100%;
   display: block;
+}
+
+.fade-in {
+  opacity: 0;
+  animation-name: sample;
+  animation-duration: 5s;
+  animation-iteration-count: 2;
+  animation-fill-mode: forwards;
+}
+@keyframes sample {
+  0% {
+    opacity: 0;
+    /* color: #000; */
+  }
+  90% {
+    opacity: 1;
+    /* color: #000; */
+  }
+  100% {
+    opacity: 1;
+    /* color: #00f; */
+  }
 }

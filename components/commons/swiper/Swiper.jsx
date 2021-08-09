@@ -64,6 +64,11 @@ const StyledSwiper = css`
     padding-top: 30px;
     padding-bottom: 30px;
   }
+  .styledImage{
+    >img{
+      height: 100%;
+    }
+  }
   .swiper-slide {
     background-position: center;
     background-size: cover;

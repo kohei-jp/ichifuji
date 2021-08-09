@@ -23,7 +23,7 @@ SwiperCore.use([EffectFlip,Pagination,Navigation]);
 export default function FlipSwiper() {
 
   return (
-    <Container css={StyledContainer}>
+    <Box css={StyledContainer}>
       {/* <Typography variant="h5">Menu</Typography> */}
       <div css={Flip}>
         <Swiper effect={'flip'} grabCursor={true} pagination={true} navigation={true} className="mySwiper">
@@ -31,7 +31,7 @@ export default function FlipSwiper() {
           <SwiperSlide><img src="/images/menu.png"/></SwiperSlide>
         </Swiper>
       </div>  
-    </Container>
+    </Box>
   )
 }
 

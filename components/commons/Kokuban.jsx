@@ -5,11 +5,12 @@ const Kokuban = () => {
   return (
     <Container css={kokuban}>
       <Typography>・営業時間について(8/9現在)</Typography>
-      <Typography>　・月〜金曜日(10:00〜15:00、16:00〜20:00)</Typography>
+      <Typography>　月〜金曜日</Typography>
+      <Typography>　(10:00〜15:00、16:00〜20:00)</Typography>
       <Typography>・夏季休暇</Typography>
       <Typography>　8/9〜8/13</Typography>
       <Typography>・アルバイト募集しております。</Typography>
-      <Typography>　1. 年齢: 18〜60歳くらい迄</Typography>
+      <Typography>　年齢: 18〜60歳くらい迄</Typography>
       <Typography>　　詳細はご連絡ください。</Typography>
     </Container>
   )

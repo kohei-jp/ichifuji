@@ -16,11 +16,6 @@ import { Typography, Container } from '@material-ui/core'
 
 export default function Home() {
 
-  useEffect(() => {
-    // const video = document.getElementById("bg-video");
-    // video.play();
-  },[]);
-
   return (
     <Layout home>
       <Head>
@@ -29,43 +24,45 @@ export default function Home() {
       <div css={Wrapper}>
         {/* <Header /> */}
         <Box>
-          <video className="bg-video" loop muted autoPlay playsInline >
+          <video id="bg-video" autoPlay muted playsInline loop >
             <source src="/videos/cooking.mp4" type="video/mp4"></source>
           </video>
         </Box>
         <Box className="centerBox">
-          <Typography  variant="h2" className="title title-upper wf-hannari">定食屋　一富士</Typography>
+          <Typography  variant="h2" className="title title-upper wf-hannari fade-in">定食屋　ふじや</Typography>
         </Box>
 
         <Container css={StyledContainer}>
           <Box className="styledContent">
             <Typography  variant="h5" className="itemList-title">ギャラリー</Typography>
-            <Box>
+            <Box className="fade-in">
               <Swiper />
             </Box>
           </Box>
           <Box className="styledContent">
-            <Typography  variant="h5" className="information">一富士からのお知らせ</Typography>
-            <Box>
+            <Typography  variant="h5" className="information">ふじやからのお知らせ</Typography>
+            <Box className="fade-in">
               <Kokuban />
             </Box>
           </Box>
           <Typography  variant="h5" className="itemList-title">お品書き</Typography>
-          <div>
+          <Box className="fade-in">
             <FlipSwiper />
-          </div>
-          <ItemList />
+          </Box>
+          <Box className="fade-in">
+            <ItemList />
+          </Box>
         </Container>
 
         <Container css={Access}>
           <Box className="styledContent">
             <Typography  variant="h5" className="information">アクセス</Typography>
-            <Box className="ac-table">
+            <Box className="ac-table fade-in">
               <table>
                 <tbody>
                   <tr>
                     <td className="acess-title">住所</td>
-                    <td>〒169-0075 東京都新宿区高田馬場４丁目３４−３</td>
+                    <td><span className="inline">〒169-0075</span><span className="inline">新宿区高田馬場4-34−3</span></td>
                   </tr>
                   <tr>
                     <td className="acess-title">TEL</td>
@@ -73,7 +70,7 @@ export default function Home() {
                   </tr>
                   <tr>
                     <td className="acess-title">営業時間</td>
-                    <td>11:00～15:00 16:00～20:00</td>
+                    <td>11:00～15:00,16:00～20:00</td>
                   </tr>
                   <tr>
                     <td className="acess-title">定休日</td>
@@ -81,11 +78,11 @@ export default function Home() {
                   </tr>
                   <tr>
                     <td className="acess-title">席数</td>
-                    <td>カウンター 6席 / テーブル 20席</td>
+                    <td><span className="inline">カウンター6席/</span><span className="inline"> テーブル20席</span></td>
                   </tr>
                   <tr>
                     <td className="acess-title">交通手段</td>
-                    <td>JR山手線 / 西武新宿 高田馬場駅より徒歩約15分</td>
+                    <td><span className="inline">JR山手線 / 西武新宿</span> <span className="inline">高田馬場駅より徒歩約15分</span></td>
                   </tr>
                 </tbody>
               </table>
@@ -103,7 +100,7 @@ export default function Home() {
 }
 const Wrapper = css`
   position: relative;
-  .bg-video {
+  #bg-video {
     /* background: url('/images/profile.jpg') no-repeat; // 動画が再生を始めるまで、cssのほうでも背景を設定します。 */
     width: 100%;
     background-attachment: fixed; // 中央揃えになるように、fixed。
@@ -130,7 +127,7 @@ const Wrapper = css`
       top:1%;
     }
     .title{
-      font-size: 3rem;
+      font-size: 2rem;
     }
   } 
 `;
@@ -171,6 +168,14 @@ const Access = css`
     }
     .acess-title {
       width: 20%;
+    }
+    .inline{
+      display: inline-block;
+    }
+    @media (max-width: 475px) {
+      .acess-title {
+        width: 25%;
+      }
     }
   }
 
