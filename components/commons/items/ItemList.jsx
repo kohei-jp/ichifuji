@@ -18,8 +18,8 @@ export default function ItemList() {
       //   }
       // }}
     >
-      {itemData.map((item) => (
-        <ImageListItem key={item.img} css={listItem}>
+      {itemData.map((item, i) => (
+        <ImageListItem key={i} css={listItem}>
           <img
             srcSet={`${item.img}?w=248&fit=crop&auto=format 1x,
                 ${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}

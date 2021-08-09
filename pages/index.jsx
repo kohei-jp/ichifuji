@@ -17,8 +17,8 @@ import { Typography, Container } from '@material-ui/core'
 export default function Home() {
 
   useEffect(() => {
-    const video = document.getElementById("bg-video");
-    video.play();
+    // const video = document.getElementById("bg-video");
+    // video.play();
   },[]);
 
   return (
@@ -28,8 +28,8 @@ export default function Home() {
       </Head>
       <div css={Wrapper}>
         {/* <Header /> */}
-        <Box className="wrapperVideo">
-          <video id="bg-video" preload="auto" loop autoPlay muted playsInline >
+        <Box>
+          <video className="bg-video" loop muted autoPlay playsInline >
             <source src="/videos/cooking.mp4" type="video/mp4"></source>
           </video>
         </Box>
@@ -62,30 +62,32 @@ export default function Home() {
             <Typography  variant="h5" className="information">アクセス</Typography>
             <Box className="ac-table">
               <table>
-                <tr>
-                  <td className="acess-title">住所</td>
-                  <td>〒169-0075 東京都新宿区高田馬場４丁目３４−３</td>
-                </tr>
-                <tr>
-                  <td className="acess-title">TEL</td>
-                  <td>03-3368-0251</td>
-                </tr>
-                <tr>
-                  <td className="acess-title">営業時間</td>
-                  <td>11:00～15:00 16:00～20:00</td>
-                </tr>
-                <tr>
-                  <td className="acess-title">定休日</td>
-                  <td>土日、祝日</td>
-                </tr>
-                <tr>
-                  <td className="acess-title">席数</td>
-                  <td>カウンター 6席 / テーブル 20席</td>
-                </tr>
-                <tr>
-                  <td className="acess-title">交通手段</td>
-                  <td>JR山手線 / 西武新宿 高田馬場駅より徒歩約15分</td>
-                </tr>
+                <tbody>
+                  <tr>
+                    <td className="acess-title">住所</td>
+                    <td>〒169-0075 東京都新宿区高田馬場４丁目３４−３</td>
+                  </tr>
+                  <tr>
+                    <td className="acess-title">TEL</td>
+                    <td>03-3368-0251</td>
+                  </tr>
+                  <tr>
+                    <td className="acess-title">営業時間</td>
+                    <td>11:00～15:00 16:00～20:00</td>
+                  </tr>
+                  <tr>
+                    <td className="acess-title">定休日</td>
+                    <td>土日、祝日</td>
+                  </tr>
+                  <tr>
+                    <td className="acess-title">席数</td>
+                    <td>カウンター 6席 / テーブル 20席</td>
+                  </tr>
+                  <tr>
+                    <td className="acess-title">交通手段</td>
+                    <td>JR山手線 / 西武新宿 高田馬場駅より徒歩約15分</td>
+                  </tr>
+                </tbody>
               </table>
             </Box>
             <Box>
@@ -101,18 +103,16 @@ export default function Home() {
 }
 const Wrapper = css`
   position: relative;
-  .wrapperVideo {
+  .bg-video {
+    /* background: url('/images/profile.jpg') no-repeat; // 動画が再生を始めるまで、cssのほうでも背景を設定します。 */
+    width: 100%;
+    background-attachment: fixed; // 中央揃えになるように、fixed。
+    background-position: center; // positionも中央に。
+    background-size: cover; // 画面サイズに応じてサイズを可変するように設定。
     z-index: 1;
-    #bg-video {
-      /* background: url('/images/profile.jpg') no-repeat; // 動画が再生を始めるまで、cssのほうでも背景を設定します。 */
-      width: 100%;
-      background-attachment: fixed; // 中央揃えになるように、fixed。
-      background-position: center; // positionも中央に。
-      background-size: cover; // 画面サイズに応じてサイズを可変するように設定。
-      z-index: 1;
-    }
   }
   .centerBox{
+
     position: absolute;
     top: 5rem;
     right: 50%;
