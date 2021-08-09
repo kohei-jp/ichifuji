@@ -5,6 +5,7 @@ import Layout, { siteTitle } from '../components/layouts/layout'
 import Swiper from '../components/commons/swiper/Swiper'
 import FlipSwiper from '../components/commons/swiper/FlipSwiper'
 import ItemList from '../components/commons/items/ItemList'
+import Kokuban from '../components/commons/Kokuban'
 import Header from '../components/layouts/Header'
 import Image from 'next/image'
 import { css } from '@emotion/react'
@@ -35,20 +36,61 @@ export default function Home() {
         <Box className="centerBox">
           <Typography  variant="h2" className="title title-upper wf-hannari">定食屋　一富士</Typography>
         </Box>
+
         <Container css={StyledContainer}>
           <Box className="styledContent">
             <Typography  variant="h5" className="information">一富士からのお知らせ</Typography>
             <Box>
-              <Swiper />
+              <Kokuban />
             </Box>
           </Box>
+          {/* <Box className="styledContent">
+            <Typography  variant="h5" className="information">一富士からのお知らせ</Typography>
+            <Box>
+              <Swiper />
+            </Box>
+          </Box> */}
           <Typography  variant="h5" className="itemList-title">お品書き</Typography>
           <div>
             <FlipSwiper />
           </div>
           <ItemList />
-          <Box>
-            
+        </Container>
+
+        <Container css={Access}>
+          <Box className="styledContent">
+            <Typography  variant="h5" className="information">アクセス</Typography>
+            <Box className="ac-table">
+              <table>
+                <tr>
+                  <td className="acess-title">住所</td>
+                  <td>〒630-8051 奈良県奈良市七条町165-1（駐車場30台完備）</td>
+                </tr>
+                <tr>
+                  <td className="acess-title">TEL</td>
+                  <td>0742-31-4999</td>
+                </tr>
+                <tr>
+                  <td className="acess-title">営業時間</td>
+                  <td>11:00～15:00 16:00～20:00</td>
+                </tr>
+                <tr>
+                  <td className="acess-title">定休日</td>
+                  <td>土日、祝日</td>
+                </tr>
+                <tr>
+                  <td className="acess-title">席数</td>
+                  <td>カウンター 6席 / テーブル 5席</td>
+                </tr>
+                <tr>
+                  <td className="acess-title">交通手段</td>
+                  <td>JR山手線 / 西武新宿 高田馬場駅より徒歩15分</td>
+                </tr>
+              </table>
+            </Box>
+            <Box>
+              {/* <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3239.701916320762!2d139.69450745062787!3d35.708952280090585!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188d36ae895555%3A0x91965c540d07c9ca!2z5LiA5a-M5aOr!5e0!3m2!1sja!2sjp!4v1628416628546!5m2!1sja!2sjp" width="400" height="300" style={{border: "none"}} allowfullscreen="" loading="lazy"></iframe> */}
+            </Box>
           </Box>
 
         </Container>
@@ -87,7 +129,7 @@ const Wrapper = css`
 `;
 
 const StyledContainer = css`
-  max-width: 800px;
+  max-width: 768px;
   margin: 0 auto;
   .styledContent{
     margin: 3rem 0;
@@ -103,4 +145,26 @@ const StyledContainer = css`
     margin: 1rem 0;
     text-align: left;
   }
+`;
+
+const Access = css`
+  max-width: 768px;
+  margin: 0 auto;
+  .styledContent{
+    margin: 3rem 0;
+    .ac-table{
+      padding: 50px 0;
+    }
+    .information{
+      margin: 1rem 0;
+      text-align: right;
+    }
+    .concept{
+      margin: 1rem 0;
+    }
+    .acess-title {
+      width: 20%;
+    }
+  }
+
 `;
