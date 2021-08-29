@@ -1,11 +1,7 @@
-import Head from 'next/head'
-import styles from './layout.module.css'
-import utilStyles from '../../styles/utils.module.css'
-import Link from 'next/link'
+// import Head from 'next/head'
+// import styles from './layout.module.css'
+// import utilStyles from '../../styles/utils.module.css'
 import { css } from '@emotion/react'
-import {useEffect} from 'react'
-import Container from '@material-ui/core/Container';
-import Footer from './Footer'
 
 const name = 'Ichifuji'
 export const siteTitle = '一富士'
@@ -16,7 +12,6 @@ export default function Layout({ children, home }) {
     <div css={container}>
       <link href="https://fonts.googleapis.com/earlyaccess/hannari.css" rel="stylesheet" />
       <main>{children}</main>
-      <Footer />
     </div>
   )
 }
