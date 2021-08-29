@@ -26,38 +26,44 @@ export default function Home() {
         <Box>
           <video id="bg-video" autoPlay muted playsInline loop >
             <source src="/videos/cooking.mp4" type="video/mp4"></source>
+            Sorry, your browser doesn't support embedded videos.
           </video>
         </Box>
         <Box className="centerBox">
-          <Typography  variant="h2" className="title title-upper wf-hannari fade-in">定食屋　ふじや</Typography>
+          <Typography  variant="h2" className="title title-upper wf-hannari">定食屋　一富士</Typography>
         </Box>
 
         <Container css={StyledContainer}>
           <Box className="styledContent">
             <Typography  variant="h5" className="itemList-title">ギャラリー</Typography>
-            <Box className="fade-in">
+            <Box className="">
               <Swiper />
             </Box>
           </Box>
           <Box className="styledContent">
             <Typography  variant="h5" className="information">ふじやからのお知らせ</Typography>
-            <Box className="fade-in">
+            <Box className="">
               <Kokuban />
             </Box>
           </Box>
-          <Typography  variant="h5" className="itemList-title">お品書き</Typography>
-          <Box className="fade-in">
+
+          <Box className="styledContent">
+            <Typography  variant="h5" className="itemList-title">お品書き</Typography>
+          <Box className="">
             <FlipSwiper />
+            </Box>
           </Box>
-          <Box className="fade-in">
-            <ItemList />
+          <Box className="styledContent">
+            <Box> 
+            <div className="" ><ItemList /></div>
+            </Box>
           </Box>
         </Container>
 
         <Container css={Access}>
           <Box className="styledContent">
             <Typography  variant="h5" className="information">アクセス</Typography>
-            <Box className="ac-table fade-in">
+            <Box className="ac-table ">
               <table>
                 <tbody>
                   <tr>
@@ -101,8 +107,8 @@ export default function Home() {
 const Wrapper = css`
   position: relative;
   #bg-video {
-    /* background: url('/images/profile.jpg') no-repeat; // 動画が再生を始めるまで、cssのほうでも背景を設定します。 */
     width: 100%;
+    /* height: 56.25vw; */
     background-attachment: fixed; // 中央揃えになるように、fixed。
     background-position: center; // positionも中央に。
     background-size: cover; // 画面サイズに応じてサイズを可変するように設定。
