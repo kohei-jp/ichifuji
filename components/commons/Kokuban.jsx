@@ -28,6 +28,7 @@ const kokuban = css`
   border: 8px solid #064739; /* 枠線 */
   border-radius: 3px; /* 角の丸み */
   box-shadow: 0 0 5px #333, 0 0 5px #555 inset;
+  text-align: left;
   &:before,
   &:after {
     position: absolute;

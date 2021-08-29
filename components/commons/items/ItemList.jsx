@@ -46,12 +46,16 @@ export default function ItemList() {
 }
 
 const listItem = css`
+  text-align: left;
   width: 33% !important;
   @media (max-width: 475px) {
     height: 120px !important;
     .MuiImageListItemBar-rootSubtitle{
       height: 35%;
     }
+  }
+  .MuiSvgIcon-root{
+    color: gray;
   }
 `;
 
