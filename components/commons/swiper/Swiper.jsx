@@ -73,19 +73,26 @@ const StyledSwiper = css`
     background-position: center;
     background-size: cover;
     width: 250px;
-    height: 200px;
+    height: 200px; // 画像表示領域
+    @media screen and (max-width: 425px){
+      height: 100%;  
+    }
   }
   .swiper-slide img {
     display: block;
     border-radius: 10px;
     width: 100%;
-    height: 200px;
+    height: 200px;  // 実際の画像サイズ
+    @media screen and (max-width: 425px){
+      height: 100%;  
+    }
   }
 
   .slide {
     position: relative;
     width: 250px;
     height: 200px;
+    height: 100%;
     padding: 1rem;
     background-color: lightyellow;
     /* background-color: #eee9e6; */

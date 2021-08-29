@@ -1,16 +1,12 @@
-
-import {useEffect} from 'react'
 import Head from 'next/head'
 import Layout, { siteTitle } from '../components/layouts/layout'
 import Swiper from '../components/commons/swiper/Swiper'
 import FlipSwiper from '../components/commons/swiper/FlipSwiper'
 import ItemList from '../components/commons/items/ItemList'
-import FadeIn from '../components/commons/FadeIn'
+import FadeIn from '../components/commons/fadeIn'
 import Kokuban from '../components/commons/Kokuban'
 import Header from '../components/layouts/Header'
-import Image from 'next/image'
 import { css } from '@emotion/react'
-import Link from 'next/link'
 import Box from '@material-ui/core/Box';
 import { Typography, Container } from '@material-ui/core'
 

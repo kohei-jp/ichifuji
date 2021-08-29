@@ -11,15 +11,12 @@ const FadeIn = ({ children }) => {
   const BottomIn = keyframes({
     '0%': {
       opacity: 0,
-      // transform: `translateY(${sizes[4]})`,
     },
     '50%': {
-      opacity: 0.5,
-      // transform: `translateY(${sizes[2]})`,
+      opacity: 0.6,
     },
     '100%': {
       opacity: 1,
-      // transform: `translateY(0)`,
     },
   });
 
@@ -27,9 +24,7 @@ const FadeIn = ({ children }) => {
     <div
       ref={ref}
       css={{
-        // margin: `${sizes[16]} auto 0`,
         textAlign: 'center',
-        // color: colors.blue,
         opacity: inView ? 1 : 0,
         animation: inView ? `${BottomIn} 0.5s ease-out` : 0,
       }}
