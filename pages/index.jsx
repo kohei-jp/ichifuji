@@ -24,7 +24,7 @@ export default function Home() {
       setTimeout(
         function () {
           setVideoLoaded(true);
-        }, "500"
+        }, "1000"
       )
     }
   },[el.current])
