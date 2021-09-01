@@ -46,7 +46,7 @@ export default function Home() {
         </Head>
         <div css={Wrapper}>
           {/* <Header /> */}
-          <Box>
+          <Box className="videoBox">
             <video id="bg-video" ref={el} autoPlay muted playsInline loop >
               { isSmartPhone() ?
                 <>
@@ -142,7 +142,13 @@ export default function Home() {
 }
 const Wrapper = css`
   position: relative;
+  .videoBox{
+    position: relative;
+    padding-top: 56.25%;
+  }
   #bg-video {
+    position: absolute;
+    top: 0;
     width: 100%;
     /* height: 56.25vw; */
     background-attachment: fixed; // 中央揃えになるように、fixed。
