@@ -1,4 +1,4 @@
-import React,{ useState } from 'react';
+import React,{ useState, useRef } from 'react';
 import Head from 'next/head'
 import Layout, { siteTitle } from '../components/layouts/layout'
 import Swiper from '../components/commons/swiper/Swiper'
@@ -15,13 +15,17 @@ import { Typography, Container } from '@material-ui/core'
 
 
 export default function Home() {
+  const el = useRef(null);
   const [loading, setLoading] = useState(false);
+  const [videoLoaded, setVideoLoaded] = useState(false);
 
-  React.useEffect(() => {
-    window.onload = function() {
-      setLoading(true);
-    };
+  React.useEffect(()=> {
+    window.onload = function(){ setLoading(true); }
   },[])
+
+  React.useEffect(()=> {
+    setVideoLoaded(true);
+  },[el.current])
 
   return (
     <Layout home>
@@ -33,7 +37,7 @@ export default function Home() {
         <div css={Wrapper}>
           {/* <Header /> */}
           <Box>
-            <video id="bg-video" autoPlay muted playsInline loop >
+            <video id="bg-video" ref={el} autoPlay muted playsInline loop >
               <source src="/videos/cooking.mp4" type="video/mp4"></source>
               Sorry, your browser doesn't support embedded videos.
             </video>
@@ -41,14 +45,15 @@ export default function Home() {
           <Box className="centerBox">
             <FadeIn><Typography  variant="h2" className="title title-upper wf-hannari">定食屋　一富士</Typography></FadeIn>
           </Box>
-
-          <Container css={StyledContainer}>
-              <Box className="styledContent">
-                <Typography  variant="h5" className="itemList-title">ギャラリー</Typography>
-                <FadeIn>
-                  <Swiper />
-                </FadeIn>
-              </Box>
+          { videoLoaded && 
+          <>
+            <Container css={StyledContainer}>
+              <FadeIn>
+                <Box className="styledContent">
+                  <Typography  variant="h5" className="itemList-title">ギャラリー</Typography>
+                    <Swiper />
+                </Box>
+              </FadeIn>
               <Box className="styledContent">
                 <Typography  variant="h5" className="information">一富士からのお知らせ</Typography>
                   <FadeIn>
@@ -66,9 +71,9 @@ export default function Home() {
                   <ItemList />
                 </FadeIn>
               </Box>
-          </Container>
+            </Container>
 
-          <Container css={Access}>
+            <Container css={Access}>
               <Box className="styledContent">
                 <Typography  variant="h5" className="information">アクセス</Typography>
                 <FadeIn>
@@ -107,7 +112,8 @@ export default function Home() {
                   </Box>
                 </FadeIn>
               </Box>
-          </Container>
+            </Container>
+          </>}
         </div>
         <Footer />
       </>

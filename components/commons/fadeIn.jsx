@@ -26,7 +26,7 @@ const FadeIn = ({ children }) => {
       css={{
         textAlign: 'center',
         opacity: inView ? 1 : 0,
-        animation: inView ? `${BottomIn} 0.5s ease-out` : 0,
+        animation: inView ? `${BottomIn} 1s ease-out` : 0,
       }}
     >
       {children}
