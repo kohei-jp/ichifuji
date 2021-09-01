@@ -70,7 +70,7 @@ export default function Home() {
           <>
             <Container css={StyledContainer}>
               <FadeIn>
-                <Box className="styledContent">
+                <Box className="styledContent gallery">
                   <Typography  variant="h5" className="itemList-title">ギャラリー</Typography>
                     <Swiper />
                 </Box>
@@ -190,6 +190,9 @@ const StyledContainer = css`
   .itemList-title{
     margin: 1rem 0;
     text-align: left;
+  }
+  .gallery{
+    min-height: 260px;
   }
 `;
 
