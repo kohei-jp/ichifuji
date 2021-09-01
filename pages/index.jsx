@@ -16,21 +16,31 @@ import { Typography, Container } from '@material-ui/core'
 
 export default function Home() {
   const el = useRef(null);
-  const [loading, setLoading] = useState(false);
   const [videoLoaded, setVideoLoaded] = useState(false);
 
-  React.useEffect(()=> {
-    window.onload = function(){ setLoading(true); }
-  },[])
 
   React.useEffect(()=> {
-    setVideoLoaded(true);
+    if (el.current){
+      setTimeout(
+        function () {
+          setVideoLoaded(true);
+        }, "500"
+      )
+    }
   },[el.current])
 
+  const isSmartPhone = () => {
+    if (process.browser) { 
+      if (navigator.userAgent.match(/iPhone|Android.+Mobile/)) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+  }
+
   return (
-    <Layout home>
-      { loading && 
-      <>
+      <Layout home>
         <Head>
           <title>{siteTitle}</title>
         </Head>
@@ -38,12 +48,23 @@ export default function Home() {
           {/* <Header /> */}
           <Box>
             <video id="bg-video" ref={el} autoPlay muted playsInline loop >
-              <source src="/videos/cooking.mp4" type="video/mp4"></source>
-              Sorry, your browser doesn't support embedded videos.
+              { isSmartPhone() ?
+                <>
+                  <source src="/videos/cookingSp.mp4" type="video/mp4"></source>
+                  Sorry, your browser doesn't support embedded videos.
+                </>
+                :
+                <>
+                  <source src="/videos/cooking.mp4" type="video/mp4"></source>
+                  Sorry, your browser doesn't support embedded videos.
+                </>
+              }
             </video>
           </Box>
           <Box className="centerBox">
-            <FadeIn><Typography  variant="h2" className="title title-upper wf-hannari">定食屋　一富士</Typography></FadeIn>
+            { videoLoaded &&
+              <FadeIn><Typography  variant="h2" className="title title-upper wf-hannari">定食屋　一富士</Typography></FadeIn>
+            }
           </Box>
           { videoLoaded && 
           <>
@@ -115,12 +136,8 @@ export default function Home() {
             </Container>
           </>}
         </div>
-        <Footer />
-      </>
-      ||
-      <Loader />
-    }
-    </Layout>
+        { videoLoaded && <Footer />}
+      </Layout>
   )
 }
 const Wrapper = css`
