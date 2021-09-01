@@ -17,7 +17,11 @@ import { Typography, Container } from '@material-ui/core'
 export default function Home() {
   const el = useRef(null);
   const [videoLoaded, setVideoLoaded] = useState(false);
+  const [sp, setSp] = useState(true);
 
+  React.useEffect(()=> {
+    setSp(isSmartPhone());
+  },[])
 
   React.useEffect(()=> {
     if (el.current){
@@ -48,14 +52,14 @@ export default function Home() {
           {/* <Header /> */}
           <Box className="videoBox">
             <video id="bg-video" ref={el} autoPlay muted playsInline loop >
-              { isSmartPhone() ?
+              { sp ?
                 <>
-                  <source src="/videos/cookingSp.mp4" type="video/mp4"></source>
+                  <source src="/videos/spTop.mp4" type="video/mp4"></source>
                   Sorry, your browser doesn't support embedded videos.
                 </>
                 :
                 <>
-                  <source src="/videos/cooking.mp4" type="video/mp4"></source>
+                  <source src="/videos/pcTop.mp4" type="video/mp4"></source>
                   Sorry, your browser doesn't support embedded videos.
                 </>
               }

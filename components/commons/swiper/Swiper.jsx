@@ -65,7 +65,11 @@ const StyledSwiper = css`
     padding-bottom: 30px;
   }
   .styledImage{
+    position: relative;
+    padding-top: 80%;
     >img{
+      position: absolute;
+      top: 0;
       height: 100%;
     }
   }
