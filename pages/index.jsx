@@ -54,7 +54,7 @@ export default function Home() {
             <video id="bg-video" ref={el} autoPlay muted playsInline loop >
               { sp ?
                 <>
-                  <source src="/videos/spTop.mp4" type="video/mp4"></source>
+                  <source src="/videos/spTops.mp4" type="video/mp4"></source>
                   Sorry, your browser doesn't support embedded videos.
                 </>
                 :
@@ -179,7 +179,7 @@ const Wrapper = css`
       top:1%;
     }
     .title{
-      font-size: 2.5rem;
+      font-size: 3rem;
     }
   } 
 `;
