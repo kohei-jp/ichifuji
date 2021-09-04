@@ -9,13 +9,6 @@ import InfoIcon from '@material-ui/icons/Info';
 export default function ItemList() {
   return (
     <ImageList 
-      // sx={{ 
-      //   width:{ 
-      //     800, 
-      //   },
-      //   height: {450
-      //   }
-      // }}
     >
       {itemData.map((item, i) => (
         <ImageListItem key={i} css={listItem}>
@@ -34,7 +27,7 @@ export default function ItemList() {
                 sx={{ color: 'rgba(255, 255, 255, 0.54)' }}
                 aria-label={`info about ${item.title}`}
               >
-                <InfoIcon />
+                {/* <InfoIcon /> */}
               </IconButton>
             }
           />
