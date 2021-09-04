@@ -19,9 +19,9 @@ export default function Home() {
   const [videoLoaded, setVideoLoaded] = useState(false);
   const [sp, setSp] = useState(true);
 
-  React.useEffect(()=> {
-    setSp(isSmartPhone());
-  },[])
+  // React.useEffect(()=> {
+  //   setSp(isSmartPhone());
+  // },[])
 
   React.useEffect(()=> {
     if (el.current){
@@ -45,6 +45,7 @@ export default function Home() {
 
   return (
       <Layout home>
+
         <Head>
           <title>{siteTitle}</title>
         </Head>
@@ -52,17 +53,9 @@ export default function Home() {
           {/* <Header /> */}
           <Box className="videoBox">
             <video id="bg-video" ref={el} autoPlay muted playsInline loop >
-              { sp ?
-                <>
-                  <source src="/videos/spTop.mp4" type="video/mp4"></source>
-                  Sorry, your browser doesn't support embedded videos.
-                </>
-                :
-                <>
-                  <source src="/videos/pcTop.mp4" type="video/mp4"></source>
-                  Sorry, your browser doesn't support embedded videos.
-                </>
-              }
+              {/* <source src={sp ? "/videos/spTop.mp4" : "/videos/pcTop.mp4"} type="video/mp4"></source> */}
+              <source src="/videos/pcTop.mp4" type="video/mp4"></source>
+              Sorry, your browser doesn't support embedded videos.
             </video>
           </Box>
           <Box className="centerBox">
