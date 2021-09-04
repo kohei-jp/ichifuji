@@ -169,10 +169,10 @@ const Wrapper = css`
   }
   @media (max-width: 475px) {
     .centerBox{
-      top:1%;
+      top: .5%;
     }
     .title{
-      font-size: 3rem;
+      font-size: 2.5rem;
     }
   } 
 `;
